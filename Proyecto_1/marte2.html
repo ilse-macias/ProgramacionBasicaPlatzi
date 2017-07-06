@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>Marte</title>	
+		<meta charset="UTF-8" lang="ES" />
+	</header>
+
+	<body>
+		<h1>Tu peso en otro planeta</h1>
+		<p>Tu peso en la Tierra distinto en Marte o Júpiter</p>
+
+		<script>
+			var user = prompt("Cuál es tu peso?");
+
+			var g_tierra = 9.8;
+			var g_marte = 3.7;
+			var g_jupiter = 24.8;
+
+			var peso = parseInt(user);
+			var peso_final;
+
+			peso_final = (peso * g_marte) / g_tierra;
+			//peso_final = parseInt(peso_final); //Convierte las variables de tipo flotante a decimal.
+			peso_final = parseFloat(peso_final).toFixed(2); //Traer un número flotante y Agrega dos dígitos.
+
+			alert(peso_final);
+
+			document.write("Tu peso en Marte es: <strong>" + peso_final + " kilos.</strong>");
+
+		</script>
+
+	</body>	
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>Marte - Júpiter</title>	
+		<meta charset="UTF-8" lang="ES" />
+	</header>
+
+	<body>
+		<h1>Tu peso en otro planeta</h1>
+		<p>Tu peso en la Tierra distinto en Marte o Júpiter</p>
+
+		<script>
+			var user = prompt("?Cuál es tu peso?");
+			var planeta = prompt("?Qué planeta escoges? \n 1. Marte 2. Júpiter 3. Kriptón");
+
+			var g_tierra = 9.8;
+			var g_marte = 3.7;
+			var g_jupiter = 24.8;
+
+			var peso = parseInt(user);
+			var peso_final;
+			
+			if(planeta == 1 || planeta == "Marte" || planeta == "marte")
+			{
+				peso_final = (peso * g_marte) / g_tierra;
+				peso_final = parseFloat(peso_final).toFixed(2); //Traer un número flotante y Agrega dos dígitos.
+				document.write("Tu peso en Marte es: <strong>" + peso_final + " kilos.</strong>");
+			}
+
+
+			else if(planeta == 2 /*planeta == "Júpiter" || planeta == "júpiter"*/ || planeta == "Jupiter" || planeta == "jupiter")
+			{
+				peso_final = (peso * g_jupiter) / g_tierra;
+				peso_final = parseFloat(peso_final).toFixed(2); //Traer un número flotante y Agrega dos dígitos.
+				document.write("Tu peso en Júpiter es: <strong>" + peso_final + " kilos.</strong>");
+			}
+
+			else if(planeta == 3)
+			{
+				peso_final = 100000;
+				document.write("Tu peso en Kriptón siempre será de " + peso_final);
+			}
+
+			else
+			{
+				document.write("La opción que eleccionó no existe.");
+			}
+			
+			//peso_final = parseInt(peso_final); //Convierte las variables de tipo flotante a decimal.
+			
+			//alert(peso_final);
+			
+		</script>
+
+	</body>	
+</html>
