@@ -1,11 +1,11 @@
-document.addEventListener("mousedown", dibujarMouse);
+document.addEventListener("mouseup", dibujarMouse);
 var punto = document.getElementById("area_de_dibujo");
 var puntoLienzo = punto.getContext("2d");
 
-var x, y = 100;
+var x = 100;
+var y = 101;
 
-
-dibujarLinea("red", x-1, y-1, x+1, y+1, puntoLienzo);
+dibujarLinea("blue", x-1, y-1, x+1, y+1, puntoLienzo);
 
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 {
@@ -18,17 +18,24 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 	lienzo.closePath(); //cerrar el trazo.
 }
 
-function dibujarMouse(mouse)
-{
-	var dibujarLineaMouse = true;
-	var colorcito = "blue";
-	var movimiento = 20;
 
-	if(dibujarLineaMouse == true)
+function dibujarMouse(evento)
+{
+	
+	if(evento)
 	{
-		dibujarLinea(colorcito, x, y, x, y - movimiento, puntoLienzo);
-		y = y - movimiento;
+		dibujarLinea("black", x, y, x, y, puntoLienzo)
+		console.log(evento.clientX);
 	}
 
-	console.log(mouse);
+	else
+	{
+		console.log(evento.clientY);
+	}
+	
+
 }
+
+//Mostrar en consola los attributos del mouse. - checked.
+//Dibujar un punto con coordenadas fijas - checked.
+//Dibujar cuando se presiona el mouse.
